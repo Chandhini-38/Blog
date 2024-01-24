@@ -1,6 +1,6 @@
 const express = require('express')
 
-const {createBlog,getAllBlogs,updateBlog,deleteBlog,getSingleBlog} = require('../Controller/Blogcontroller')
+const {createBlog,getAllBlogs,updateBlog,deleteBlog,getSingleBlog,getMyBlogs} = require('../Controller/Blogcontroller')
 
 //router object
 const router = express.Router()
@@ -11,5 +11,8 @@ router.post('/createBlog', createBlog)
 router.put('/updateBlog/:id', updateBlog)
 router.delete('/deleteBlog/:id', deleteBlog)
 router.get('/getBlog/:id', getSingleBlog)
+
+//user's blog
+router.get('/myBlogs/:id', getMyBlogs)
 
 module.exports = router
